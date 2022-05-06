@@ -1,18 +1,17 @@
 name: Super-Linter
 
-on: Push
+on: push
 
-jobs: 
+jobs:
   super-lint:
     name: Lint code base
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
-      - name: Run Super-linter
+
+      - name: Run Super-Linter
         uses: github/super-linter@v3
         env:
-          DEFAULT_BRANCh: main
-          GITHUB_TOKEN: ${{secrets.G_TOKEN}}
-          
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
